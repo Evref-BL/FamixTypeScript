@@ -4,16 +4,25 @@ I represent a TypeScript Accessor (getter or setter)
 
 "
 Class {
-	#name : #FamixTypeScriptAccessor,
-	#superclass : #FamixTypeScriptMethod,
-	#category : #'Famix-TypeScript-Entities-Entities'
+	#name : 'FamixTypeScriptAccessor',
+	#superclass : 'FamixTypeScriptMethod',
+	#category : 'Famix-TypeScript-Entities-Entities',
+	#package : 'Famix-TypeScript-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixTypeScriptAccessor class >> annotation [
 
 	<FMClass: #Accessor super: #FamixTypeScriptMethod>
 	<package: #FamixTypeScript>
 	<generated>
 	^ self
+]
+
+{ #category : 'visitor' }
+FamixTypeScriptAccessor >> accept: aVisitor [
+
+	<generated>
+	^ aVisitor visitFamixTypeScriptAccessor: self
 ]

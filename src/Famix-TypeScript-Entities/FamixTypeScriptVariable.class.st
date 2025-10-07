@@ -32,18 +32,27 @@ I represent a TypeScript variable.
 
 "
 Class {
-	#name : #FamixTypeScriptVariable,
-	#superclass : #FamixTypeScriptStructuralEntity,
+	#name : 'FamixTypeScriptVariable',
+	#superclass : 'FamixTypeScriptStructuralEntity',
 	#traits : 'FamixTImportable + FamixTLocalVariable',
 	#classTraits : 'FamixTImportable classTrait + FamixTLocalVariable classTrait',
-	#category : #'Famix-TypeScript-Entities-Entities'
+	#category : 'Famix-TypeScript-Entities-Entities',
+	#package : 'Famix-TypeScript-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixTypeScriptVariable class >> annotation [
 
 	<FMClass: #Variable super: #FamixTypeScriptStructuralEntity>
 	<package: #FamixTypeScript>
 	<generated>
 	^ self
+]
+
+{ #category : 'visitor' }
+FamixTypeScriptVariable >> accept: aVisitor [
+
+	<generated>
+	^ aVisitor visitFamixTypeScriptVariable: self
 ]

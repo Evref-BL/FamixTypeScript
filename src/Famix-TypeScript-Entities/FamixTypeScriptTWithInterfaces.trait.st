@@ -13,17 +13,26 @@ I can contain interfaces (Packages, Methods, Classes...)
 
 "
 Trait {
-	#name : #FamixTypeScriptTWithInterfaces,
+	#name : 'FamixTypeScriptTWithInterfaces',
 	#traits : 'FamixTWithTypes',
 	#classTraits : 'FamixTWithTypes classTrait',
-	#category : #'Famix-TypeScript-Entities-Traits'
+	#category : 'Famix-TypeScript-Entities-Traits',
+	#package : 'Famix-TypeScript-Entities',
+	#tag : 'Traits'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixTypeScriptTWithInterfaces classSide >> annotation [
 
 	<FMClass: #TWithInterfaces super: #Object>
 	<package: #FamixTypeScript>
 	<generated>
 	^ self
+]
+
+{ #category : 'visitor' }
+FamixTypeScriptTWithInterfaces >> accept: aVisitor [
+
+	<generated>
+	^ aVisitor visitFamixTypeScriptTWithInterfaces: self
 ]

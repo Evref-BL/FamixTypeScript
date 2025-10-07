@@ -31,18 +31,27 @@ I represent One value (constant) in a Typescript enumerated type
 
 "
 Class {
-	#name : #FamixTypeScriptEnumValue,
-	#superclass : #FamixTypeScriptStructuralEntity,
+	#name : 'FamixTypeScriptEnumValue',
+	#superclass : 'FamixTypeScriptStructuralEntity',
 	#traits : 'FamixTEnumValue',
 	#classTraits : 'FamixTEnumValue classTrait',
-	#category : #'Famix-TypeScript-Entities-Entities'
+	#category : 'Famix-TypeScript-Entities-Entities',
+	#package : 'Famix-TypeScript-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixTypeScriptEnumValue class >> annotation [
 
 	<FMClass: #EnumValue super: #FamixTypeScriptStructuralEntity>
 	<package: #FamixTypeScript>
 	<generated>
 	^ self
+]
+
+{ #category : 'visitor' }
+FamixTypeScriptEnumValue >> accept: aVisitor [
+
+	<generated>
+	^ aVisitor visitFamixTypeScriptEnumValue: self
 ]

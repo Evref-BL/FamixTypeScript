@@ -24,18 +24,27 @@ I represent a TypeScript parametric arrow function.
 
 "
 Class {
-	#name : #FamixTypeScriptParametricArrowFunction,
-	#superclass : #FamixTypeScriptArrowFunction,
+	#name : 'FamixTypeScriptParametricArrowFunction',
+	#superclass : 'FamixTypeScriptArrowFunction',
 	#traits : 'FamixTParametricEntity',
 	#classTraits : 'FamixTParametricEntity classTrait',
-	#category : #'Famix-TypeScript-Entities-Entities'
+	#category : 'Famix-TypeScript-Entities-Entities',
+	#package : 'Famix-TypeScript-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixTypeScriptParametricArrowFunction class >> annotation [
 
 	<FMClass: #ParametricArrowFunction super: #FamixTypeScriptArrowFunction>
 	<package: #FamixTypeScript>
 	<generated>
 	^ self
+]
+
+{ #category : 'visitor' }
+FamixTypeScriptParametricArrowFunction >> accept: aVisitor [
+
+	<generated>
+	^ aVisitor visitFamixTypeScriptParametricArrowFunction: self
 ]

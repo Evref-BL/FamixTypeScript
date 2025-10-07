@@ -11,18 +11,27 @@
 
 "
 Class {
-	#name : #FamixTypeScriptAlias,
-	#superclass : #FamixTypeScriptNamedEntity,
+	#name : 'FamixTypeScriptAlias',
+	#superclass : 'FamixTypeScriptNamedEntity',
 	#traits : 'FamixTImportable',
 	#classTraits : 'FamixTImportable classTrait',
-	#category : #'Famix-TypeScript-Entities-Entities'
+	#category : 'Famix-TypeScript-Entities-Entities',
+	#package : 'Famix-TypeScript-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixTypeScriptAlias class >> annotation [
 
 	<FMClass: #Alias super: #FamixTypeScriptNamedEntity>
 	<package: #FamixTypeScript>
 	<generated>
 	^ self
+]
+
+{ #category : 'visitor' }
+FamixTypeScriptAlias >> accept: aVisitor [
+
+	<generated>
+	^ aVisitor visitFamixTypeScriptAlias: self
 ]

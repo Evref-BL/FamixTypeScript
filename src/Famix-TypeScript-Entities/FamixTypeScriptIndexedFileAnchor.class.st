@@ -12,18 +12,27 @@
 
 "
 Class {
-	#name : #FamixTypeScriptIndexedFileAnchor,
-	#superclass : #FamixTypeScriptSourceAnchor,
+	#name : 'FamixTypeScriptIndexedFileAnchor',
+	#superclass : 'FamixTypeScriptSourceAnchor',
 	#traits : 'FamixTIndexedFileNavigation',
 	#classTraits : 'FamixTIndexedFileNavigation classTrait',
-	#category : #'Famix-TypeScript-Entities-Entities'
+	#category : 'Famix-TypeScript-Entities-Entities',
+	#package : 'Famix-TypeScript-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixTypeScriptIndexedFileAnchor class >> annotation [
 
 	<FMClass: #IndexedFileAnchor super: #FamixTypeScriptSourceAnchor>
 	<package: #FamixTypeScript>
 	<generated>
 	^ self
+]
+
+{ #category : 'visitor' }
+FamixTypeScriptIndexedFileAnchor >> accept: aVisitor [
+
+	<generated>
+	^ aVisitor visitFamixTypeScriptIndexedFileAnchor: self
 ]

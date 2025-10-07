@@ -13,18 +13,27 @@
 
 "
 Class {
-	#name : #FamixTypeScriptContainerEntity,
-	#superclass : #FamixTypeScriptNamedEntity,
+	#name : 'FamixTypeScriptContainerEntity',
+	#superclass : 'FamixTypeScriptNamedEntity',
 	#traits : 'FamixTWithClasses + FamixTWithFunctions + FamixTWithLocalVariables + FamixTypeScriptTWithInterfaces',
 	#classTraits : 'FamixTWithClasses classTrait + FamixTWithFunctions classTrait + FamixTWithLocalVariables classTrait + FamixTypeScriptTWithInterfaces classTrait',
-	#category : #'Famix-TypeScript-Entities-Entities'
+	#category : 'Famix-TypeScript-Entities-Entities',
+	#package : 'Famix-TypeScript-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixTypeScriptContainerEntity class >> annotation [
 
 	<FMClass: #ContainerEntity super: #FamixTypeScriptNamedEntity>
 	<package: #FamixTypeScript>
 	<generated>
 	^ self
+]
+
+{ #category : 'visitor' }
+FamixTypeScriptContainerEntity >> accept: aVisitor [
+
+	<generated>
+	^ aVisitor visitFamixTypeScriptContainerEntity: self
 ]

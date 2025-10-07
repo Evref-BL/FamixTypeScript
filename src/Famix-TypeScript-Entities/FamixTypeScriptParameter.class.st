@@ -29,18 +29,27 @@
 
 "
 Class {
-	#name : #FamixTypeScriptParameter,
-	#superclass : #FamixTypeScriptStructuralEntity,
+	#name : 'FamixTypeScriptParameter',
+	#superclass : 'FamixTypeScriptStructuralEntity',
 	#traits : 'FamixTParameter',
 	#classTraits : 'FamixTParameter classTrait',
-	#category : #'Famix-TypeScript-Entities-Entities'
+	#category : 'Famix-TypeScript-Entities-Entities',
+	#package : 'Famix-TypeScript-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixTypeScriptParameter class >> annotation [
 
 	<FMClass: #Parameter super: #FamixTypeScriptStructuralEntity>
 	<package: #FamixTypeScript>
 	<generated>
 	^ self
+]
+
+{ #category : 'visitor' }
+FamixTypeScriptParameter >> accept: aVisitor [
+
+	<generated>
+	^ aVisitor visitFamixTypeScriptParameter: self
 ]

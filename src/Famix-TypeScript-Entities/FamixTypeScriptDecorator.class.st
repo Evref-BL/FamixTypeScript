@@ -24,18 +24,20 @@ I represent a TypeScript Decorator
 
 "
 Class {
-	#name : #FamixTypeScriptDecorator,
-	#superclass : #FamixTypeScriptNamedEntity,
+	#name : 'FamixTypeScriptDecorator',
+	#superclass : 'FamixTypeScriptNamedEntity',
 	#traits : 'FamixTImportable',
 	#classTraits : 'FamixTImportable classTrait',
 	#instVars : [
 		'#expression => FMProperty',
 		'#decoratedEntity => FMOne type: #FamixTypeScriptNamedEntity opposite: #decorators'
 	],
-	#category : #'Famix-TypeScript-Entities-Entities'
+	#category : 'Famix-TypeScript-Entities-Entities',
+	#package : 'Famix-TypeScript-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixTypeScriptDecorator class >> annotation [
 
 	<FMClass: #Decorator super: #FamixTypeScriptNamedEntity>
@@ -44,7 +46,14 @@ FamixTypeScriptDecorator class >> annotation [
 	^ self
 ]
 
-{ #category : #accessing }
+{ #category : 'visitor' }
+FamixTypeScriptDecorator >> accept: aVisitor [
+
+	<generated>
+	^ aVisitor visitFamixTypeScriptDecorator: self
+]
+
+{ #category : 'accessing' }
 FamixTypeScriptDecorator >> decoratedEntity [
 	"Relation named: #decoratedEntity type: #FamixTypeScriptNamedEntity opposite: #decorators"
 
@@ -52,14 +61,14 @@ FamixTypeScriptDecorator >> decoratedEntity [
 	^ decoratedEntity
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixTypeScriptDecorator >> decoratedEntity: anObject [
 
 	<generated>
 	decoratedEntity := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixTypeScriptDecorator >> expression [
 
 	<FMProperty: #expression type: #String>
@@ -68,7 +77,7 @@ FamixTypeScriptDecorator >> expression [
 	^ expression
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixTypeScriptDecorator >> expression: anObject [
 	<generated>
 	expression := anObject

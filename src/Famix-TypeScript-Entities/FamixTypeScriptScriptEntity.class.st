@@ -24,18 +24,27 @@
 
 "
 Class {
-	#name : #FamixTypeScriptScriptEntity,
-	#superclass : #FamixTypeScriptScopingEntity,
+	#name : 'FamixTypeScriptScriptEntity',
+	#superclass : 'FamixTypeScriptScopingEntity',
 	#traits : 'FamixTWithStatements',
 	#classTraits : 'FamixTWithStatements classTrait',
-	#category : #'Famix-TypeScript-Entities-Entities'
+	#category : 'Famix-TypeScript-Entities-Entities',
+	#package : 'Famix-TypeScript-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixTypeScriptScriptEntity class >> annotation [
 
 	<FMClass: #ScriptEntity super: #FamixTypeScriptScopingEntity>
 	<package: #FamixTypeScript>
 	<generated>
 	^ self
+]
+
+{ #category : 'visitor' }
+FamixTypeScriptScriptEntity >> accept: aVisitor [
+
+	<generated>
+	^ aVisitor visitFamixTypeScriptScriptEntity: self
 ]

@@ -4,16 +4,25 @@ I represent a TypeScript implicit variable.
 
 "
 Class {
-	#name : #FamixTypeScriptimplicitVariable,
-	#superclass : #FamixTypeScriptVariable,
-	#category : #'Famix-TypeScript-Entities-Entities'
+	#name : 'FamixTypeScriptimplicitVariable',
+	#superclass : 'FamixTypeScriptVariable',
+	#category : 'Famix-TypeScript-Entities-Entities',
+	#package : 'Famix-TypeScript-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixTypeScriptimplicitVariable class >> annotation [
 
 	<FMClass: #implicitVariable super: #FamixTypeScriptVariable>
 	<package: #FamixTypeScript>
 	<generated>
 	^ self
+]
+
+{ #category : 'visitor' }
+FamixTypeScriptimplicitVariable >> accept: aVisitor [
+
+	<generated>
+	^ aVisitor visitFamixTypeScriptimplicitVariable: self
 ]
